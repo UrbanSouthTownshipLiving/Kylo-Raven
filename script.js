@@ -72,43 +72,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-// Business card modal (triggered from CONTACT nav links)
-document.addEventListener("DOMContentLoaded", () => {
-    const cardModal = document.getElementById("businessCardModal");
-    if (!cardModal) return;
-
-    const closeCardModal = () => {
-        cardModal.classList.remove("is-open");
-        cardModal.setAttribute("aria-hidden", "true");
-        document.body.classList.remove("modal-open");
-    };
-
-    const openCardModal = () => {
-        cardModal.classList.add("is-open");
-        cardModal.setAttribute("aria-hidden", "false");
-        document.body.classList.add("modal-open");
-    };
-
-    document.querySelectorAll(".contact-card-trigger").forEach((trigger) => {
-        trigger.addEventListener("click", (event) => {
-            event.preventDefault();
-            openCardModal();
-        });
-    });
-
-    cardModal.addEventListener("click", (event) => {
-        if (event.target.matches("[data-close-card-modal]")) {
-            closeCardModal();
-        }
-    });
-
-    document.addEventListener("keydown", (event) => {
-        if (event.key === "Escape" && cardModal.classList.contains("is-open")) {
-            closeCardModal();
-        }
-    });
-});
-
 // Global image lightbox (click any standalone photo to enlarge)
 document.addEventListener("DOMContentLoaded", () => {
     const lightbox = document.getElementById("imageLightbox");
@@ -327,4 +290,40 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
         flows.forEach((flow) => flow.classList.add("is-visible"));
     }
+});
+
+// Virtual Tour — popup modal instead of new tab
+const VIRTUAL_TOUR_URL = "https://anyana.com.ph/virtual-tour/tour.html?startscene=3";
+
+function openVirtualTour() {
+    const modal = document.getElementById("virtualTourModal");
+    const iframe = document.getElementById("virtualTourIframe");
+    if (!modal || !iframe) return;
+    iframe.src = VIRTUAL_TOUR_URL;
+    modal.classList.add("is-open");
+    document.body.style.overflow = "hidden";
+}
+
+function closeVirtualTour() {
+    const modal = document.getElementById("virtualTourModal");
+    const iframe = document.getElementById("virtualTourIframe");
+    if (!modal || !iframe) return;
+    modal.classList.remove("is-open");
+    iframe.src = "";
+    document.body.style.overflow = "";
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const modal = document.getElementById("virtualTourModal");
+    if (!modal) return;
+
+    modal.addEventListener("click", (e) => {
+        if (e.target === modal) closeVirtualTour();
+    });
+
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && modal.classList.contains("is-open")) {
+            closeVirtualTour();
+        }
+    });
 });

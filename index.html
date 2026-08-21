@@ -35,7 +35,7 @@ URBANSOUTH <span>•</span> TOWNSHIP LIVING
 <a href="#community">COMMUNITY</a>
 <a href="#amenities">AMENITIES</a>
 <a href="#location">LOCATION</a>
-<a href="#" class="contact-card-trigger">CONTACT</a>
+<a href="#meet-your-agent">CONTACT</a>
 <a href="#contact" class="nav-btn">SITE VIEWING</a>
 </div>
 
@@ -521,18 +521,21 @@ Explore Anyana Bel-Air from anywhere — walk through the community and homes in
 </div>
 
 <div class="virtual-tour-frame">
-<iframe
-src="https://anyana.com.ph/virtual-tour/tour.html?startscene=3"
-loading="lazy"
-allowfullscreen
-title="Anyana Bel-Air 360 Virtual Tour">
-</iframe>
+<button type="button" class="virtual-tour-launch" onclick="openVirtualTour()">
+<div class="virtual-tour-play">
+<span class="play-icon">▶</span>
+</div>
+<div class="virtual-tour-badge">360°</div>
+<h3>Click to Launch the Virtual Tour</h3>
+<p>Walk through Anyana Bel-Air at your own pace.</p>
+</button>
 </div>
 
-<div class="virtual-tour-actions">
-<a href="https://anyana.com.ph/virtual-tour/tour.html?startscene=3" target="_blank" rel="noopener" class="btn btn-outline">
-OPEN IN FULL SCREEN
-</a>
+<div class="virtual-tour-modal" id="virtualTourModal">
+<div class="virtual-tour-modal-inner">
+<button type="button" class="virtual-tour-modal-close" onclick="closeVirtualTour()" aria-label="Close virtual tour">&times;</button>
+<iframe id="virtualTourIframe" src="" title="Anyana Bel-Air Virtual Tour" allow="fullscreen" allowfullscreen></iframe>
+</div>
 </div>
 
 </div>
@@ -1095,14 +1098,17 @@ Faces have been covered to protect the privacy of our clients.
 
 <div class="testimonial-card">
 <img src="turnover-1.jpg" alt="Happy homeowner turnover — new house key handover" class="lightbox-clickable">
+<span>KEY TURNOVER</span>
 </div>
 
 <div class="testimonial-card">
 <img src="turnover-2.jpg" alt="Happy homeowner turnover — new house key handover" class="lightbox-clickable">
+<span>KEY TURNOVER</span>
 </div>
 
 <div class="testimonial-card">
 <img src="turnover-3.jpg" alt="Happy homeowner turnover — new house key handover" class="lightbox-clickable">
+<span>KEY TURNOVER</span>
 </div>
 
 </div>
@@ -1129,6 +1135,10 @@ Your future home is closer than you think.
 Interested in a house & lot in Cavite? Let's explore the property that best fits your goals and schedule a site viewing.
 </p>
 
+</div>
+
+<div class="agent-card" id="meet-your-agent">
+<img src="business-card.png" alt="Kylo Encarnacion — In-House Property Consultant, Anyana" class="lightbox-clickable">
 </div>
 
 <div class="pickup-grid">
@@ -1238,7 +1248,7 @@ URBANSOUTH <span>•</span> TOWNSHIP LIVING
 <a href="#community">COMMUNITY</a>
 <a href="#amenities">AMENITIES</a>
 <a href="#location">LOCATION</a>
-<a href="#" class="contact-card-trigger footer-contact-trigger">CONTACT</a>
+<a href="#meet-your-agent">CONTACT</a>
 </div>
 
 </div>
@@ -1256,19 +1266,6 @@ URBANSOUTH <span>•</span> TOWNSHIP LIVING
         <button class="photo-modal-close" type="button" aria-label="Close photo preview" data-close-modal>&times;</button>
         <h2 class="photo-modal-title" id="photoModalTitle">Unit Photos</h2>
         <div class="photo-modal-gallery" id="photoModalGallery"></div>
-    </div>
-</div>
-
-<!-- BUSINESS CARD MODAL -->
-<div class="card-modal" id="businessCardModal" aria-hidden="true">
-    <div class="card-modal-backdrop" data-close-card-modal></div>
-    <div class="card-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="businessCardModalTitle">
-        <button class="card-modal-close" type="button" aria-label="Close" data-close-card-modal>&times;</button>
-        <h2 class="card-modal-title" id="businessCardModalTitle">Let's Connect</h2>
-        <img src="business-card.png" alt="Kylo Encarnacion — In-House Property Consultant, Anyana" class="card-modal-image">
-        <a href="#contact" class="btn card-modal-cta" data-close-card-modal>
-        BOOK A SITE VIEWING
-        </a>
     </div>
 </div>
 
