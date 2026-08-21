@@ -327,3 +327,34 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
+// Mobile nav hamburger toggle
+document.addEventListener("DOMContentLoaded", () => {
+    const navToggle = document.getElementById("navToggle");
+    const navLinks = document.getElementById("navLinks");
+    if (!navToggle || !navLinks) return;
+
+    function closeNav() {
+        navLinks.classList.remove("is-open");
+        navToggle.classList.remove("is-active");
+        navToggle.setAttribute("aria-expanded", "false");
+    }
+
+    function toggleNav() {
+        const isOpen = navLinks.classList.toggle("is-open");
+        navToggle.classList.toggle("is-active", isOpen);
+        navToggle.setAttribute("aria-expanded", String(isOpen));
+    }
+
+    navToggle.addEventListener("click", toggleNav);
+
+    navLinks.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", closeNav);
+    });
+
+    document.addEventListener("click", (e) => {
+        if (!navLinks.classList.contains("is-open")) return;
+        if (navLinks.contains(e.target) || navToggle.contains(e.target)) return;
+        closeNav();
+    });
+});
