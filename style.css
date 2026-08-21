@@ -1952,3 +1952,52 @@ body.modal-open{overflow:hidden;}
         padding:24px;
     }
 }
+
+/* STICKY MOBILE CALL/MESSAGE BAR */
+.mobile-sticky-bar{
+    display:none;
+    position:fixed;
+    left:0;
+    right:0;
+    bottom:0;
+    z-index:9998;
+    background:var(--dark);
+    box-shadow:0 -8px 24px rgba(0,0,0,.25);
+    padding-bottom:env(safe-area-inset-bottom);
+}
+
+.mobile-sticky-btn{
+    flex:1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:14px 10px;
+    font-weight:700;
+    font-size:15px;
+    letter-spacing:.3px;
+    text-decoration:none;
+    color:#fff;
+}
+
+.mobile-sticky-icon{
+    font-size:18px;
+    line-height:1;
+}
+
+.mobile-sticky-call{
+    background:#2fb35c;
+}
+
+.mobile-sticky-message{
+    background:var(--blue);
+}
+
+@media(max-width:850px){
+    .mobile-sticky-bar{
+        display:flex;
+    }
+    body{
+        padding-bottom:calc(56px + env(safe-area-inset-bottom));
+    }
+}
