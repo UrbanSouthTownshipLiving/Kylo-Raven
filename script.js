@@ -72,6 +72,81 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+// Business card modal (triggered from CONTACT nav links)
+document.addEventListener("DOMContentLoaded", () => {
+    const cardModal = document.getElementById("businessCardModal");
+    if (!cardModal) return;
+
+    const closeCardModal = () => {
+        cardModal.classList.remove("is-open");
+        cardModal.setAttribute("aria-hidden", "true");
+        document.body.classList.remove("modal-open");
+    };
+
+    const openCardModal = () => {
+        cardModal.classList.add("is-open");
+        cardModal.setAttribute("aria-hidden", "false");
+        document.body.classList.add("modal-open");
+    };
+
+    document.querySelectorAll(".contact-card-trigger").forEach((trigger) => {
+        trigger.addEventListener("click", (event) => {
+            event.preventDefault();
+            openCardModal();
+        });
+    });
+
+    cardModal.addEventListener("click", (event) => {
+        if (event.target.matches("[data-close-card-modal]")) {
+            closeCardModal();
+        }
+    });
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && cardModal.classList.contains("is-open")) {
+            closeCardModal();
+        }
+    });
+});
+
+// Global image lightbox (click any standalone photo to enlarge)
+document.addEventListener("DOMContentLoaded", () => {
+    const lightbox = document.getElementById("imageLightbox");
+    const lightboxImg = document.getElementById("lightboxImage");
+    if (!lightbox || !lightboxImg) return;
+
+    const closeLightbox = () => {
+        lightbox.classList.remove("is-open");
+        lightbox.setAttribute("aria-hidden", "true");
+        document.body.classList.remove("modal-open");
+        lightboxImg.src = "";
+    };
+
+    const openLightbox = (img) => {
+        lightboxImg.src = img.getAttribute("src");
+        lightboxImg.alt = img.getAttribute("alt") || "";
+        lightbox.classList.add("is-open");
+        lightbox.setAttribute("aria-hidden", "false");
+        document.body.classList.add("modal-open");
+    };
+
+    document.querySelectorAll("img.lightbox-clickable").forEach((img) => {
+        img.addEventListener("click", () => openLightbox(img));
+    });
+
+    lightbox.addEventListener("click", (event) => {
+        if (event.target.matches("[data-close-lightbox]")) {
+            closeLightbox();
+        }
+    });
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && lightbox.classList.contains("is-open")) {
+            closeLightbox();
+        }
+    });
+});
+
 // Site viewing booking form
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("siteViewingForm");

@@ -30,9 +30,12 @@ URBANSOUTH <span>•</span> TOWNSHIP LIVING
 
 <div class="nav-links">
 <a href="#homes">HOMES</a>
+<a href="#virtual-tour">VIRTUAL TOUR</a>
+<a href="#value-progression">INVESTMENT</a>
 <a href="#community">COMMUNITY</a>
 <a href="#amenities">AMENITIES</a>
 <a href="#location">LOCATION</a>
+<a href="#" class="contact-card-trigger">CONTACT</a>
 <a href="#contact" class="nav-btn">SITE VIEWING</a>
 </div>
 
@@ -495,6 +498,47 @@ INQUIRE ABOUT PARIS
 </section>
 
 
+<!-- VIRTUAL TOUR -->
+
+<section class="virtual-tour" id="virtual-tour">
+
+<div class="container">
+
+<div class="section-head">
+
+<div class="eyebrow">
+IMMERSIVE EXPERIENCE
+</div>
+
+<h2>
+Take a 360° Virtual Tour
+</h2>
+
+<p>
+Explore Anyana Bel-Air from anywhere — walk through the community and homes in an interactive 360° experience.
+</p>
+
+</div>
+
+<div class="virtual-tour-frame">
+<iframe
+src="https://anyana.com.ph/virtual-tour/tour.html?startscene=3"
+loading="lazy"
+allowfullscreen
+title="Anyana Bel-Air 360 Virtual Tour">
+</iframe>
+</div>
+
+<div class="virtual-tour-actions">
+<a href="https://anyana.com.ph/virtual-tour/tour.html?startscene=3" target="_blank" rel="noopener" class="btn btn-outline">
+OPEN IN FULL SCREEN
+</a>
+</div>
+
+</div>
+</section>
+
+
 <!-- COMMUNITY & MASTERPLAN -->
 
 <section class="community" id="community">
@@ -595,7 +639,7 @@ Your browser does not support the video tag.
 <div class="amenities-photo">
 
 <img src="photo_2026-08-11_10-38-31.jpg"
-alt="Resort-inspired pool amenities">
+alt="Resort-inspired pool amenities" class="lightbox-clickable">
 
 </div>
 
@@ -621,22 +665,22 @@ Resort-inspired amenities designed for relaxation, wellness, and family moments.
 <div class="amenity-grid">
 
 <div class="amenity">
-<img src="photo_2026-08-11_10-38-31%20(2).jpg" alt="Pool">
+<img src="photo_2026-08-11_10-38-31%20(2).jpg" alt="Pool" class="lightbox-clickable">
 <span>POOL</span>
 </div>
 
 <div class="amenity">
-<img src="Screenshot%202026-08-16%20123650.png" alt="Gym">
+<img src="Screenshot%202026-08-16%20123650.png" alt="Gym" class="lightbox-clickable">
 <span>GYM</span>
 </div>
 
 <div class="amenity">
-<img src="Screenshot%202026-08-16%20124043.png" alt="Playground">
+<img src="Screenshot%202026-08-16%20124043.png" alt="Playground" class="lightbox-clickable">
 <span>PLAYGROUND</span>
 </div>
 
 <div class="amenity">
-<img src="Screenshot%202026-08-16%20123854.png" alt="Function Hall">
+<img src="Screenshot%202026-08-16%20123854.png" alt="Function Hall" class="lightbox-clickable">
 <span>FUNCTION HALL</span>
 </div>
 
@@ -1020,6 +1064,53 @@ This is an investment thesis, not a guarantee of future returns.
 </section>
 
 
+<!-- TESTIMONIALS -->
+
+<section class="testimonials" id="testimonials">
+
+<div class="container">
+
+<div class="section-head">
+
+<div class="eyebrow">
+HAPPY HOMEOWNERS
+</div>
+
+<h2>
+Real Turnovers, Real Families.
+</h2>
+
+<div class="testimonial-rating">
+<span class="stars">★★★★★</span>
+<span class="rating-label">Trusted by our home buyers</span>
+</div>
+
+<p>
+Faces have been covered to protect the privacy of our clients.
+</p>
+
+</div>
+
+<div class="testimonial-grid">
+
+<div class="testimonial-card">
+<img src="turnover-1.jpg" alt="Happy homeowner turnover — new house key handover" class="lightbox-clickable">
+</div>
+
+<div class="testimonial-card">
+<img src="turnover-2.jpg" alt="Happy homeowner turnover — new house key handover" class="lightbox-clickable">
+</div>
+
+<div class="testimonial-card">
+<img src="turnover-3.jpg" alt="Happy homeowner turnover — new house key handover" class="lightbox-clickable">
+</div>
+
+</div>
+
+</div>
+</section>
+
+
 <!-- CTA -->
 
 <section class="cta" id="contact">
@@ -1043,7 +1134,7 @@ Interested in a house & lot in Cavite? Let's explore the property that best fits
 <div class="pickup-grid">
 
 <div class="pickup-visual">
-<img src="van-pickup-location.png" alt="Pick-up location and van for site viewing">
+<img src="van-pickup-location.png" alt="Pick-up location and van for site viewing" class="lightbox-clickable">
 </div>
 
 <div class="pickup-form">
@@ -1142,10 +1233,12 @@ URBANSOUTH <span>•</span> TOWNSHIP LIVING
 
 <div class="footer-links">
 <a href="#homes">HOMES</a>
+<a href="#virtual-tour">VIRTUAL TOUR</a>
+<a href="#value-progression">INVESTMENT</a>
 <a href="#community">COMMUNITY</a>
 <a href="#amenities">AMENITIES</a>
 <a href="#location">LOCATION</a>
-<a href="#contact">CONTACT</a>
+<a href="#" class="contact-card-trigger footer-contact-trigger">CONTACT</a>
 </div>
 
 </div>
@@ -1164,6 +1257,26 @@ URBANSOUTH <span>•</span> TOWNSHIP LIVING
         <h2 class="photo-modal-title" id="photoModalTitle">Unit Photos</h2>
         <div class="photo-modal-gallery" id="photoModalGallery"></div>
     </div>
+</div>
+
+<!-- BUSINESS CARD MODAL -->
+<div class="card-modal" id="businessCardModal" aria-hidden="true">
+    <div class="card-modal-backdrop" data-close-card-modal></div>
+    <div class="card-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="businessCardModalTitle">
+        <button class="card-modal-close" type="button" aria-label="Close" data-close-card-modal>&times;</button>
+        <h2 class="card-modal-title" id="businessCardModalTitle">Let's Connect</h2>
+        <img src="business-card.png" alt="Kylo Encarnacion — In-House Property Consultant, Anyana" class="card-modal-image">
+        <a href="#contact" class="btn card-modal-cta" data-close-card-modal>
+        BOOK A SITE VIEWING
+        </a>
+    </div>
+</div>
+
+<!-- IMAGE LIGHTBOX -->
+<div class="lightbox" id="imageLightbox" aria-hidden="true">
+    <div class="lightbox-backdrop" data-close-lightbox></div>
+    <button class="lightbox-close" type="button" aria-label="Close image preview" data-close-lightbox>&times;</button>
+    <img src="" alt="" id="lightboxImage">
 </div>
 
     <script src="script.js"></script>

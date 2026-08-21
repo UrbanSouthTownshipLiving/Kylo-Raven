@@ -564,6 +564,34 @@ section{
     box-shadow:0 20px 50px rgba(17,24,39,.15);
 }
 
+/* VIRTUAL TOUR */
+
+.virtual-tour{
+    background:#fff;
+}
+
+.virtual-tour-frame{
+    max-width:1100px;
+    margin:0 auto;
+    border-radius:24px;
+    overflow:hidden;
+    box-shadow:0 30px 70px rgba(17,24,39,.15);
+    background:#000;
+    aspect-ratio:16/9;
+}
+
+.virtual-tour-frame iframe{
+    width:100%;
+    height:100%;
+    border:0;
+    display:block;
+}
+
+.virtual-tour-actions{
+    text-align:center;
+    margin-top:26px;
+}
+
 /* COMMUNITY & MASTERPLAN */
 
 .community{
@@ -1141,6 +1169,64 @@ section{
     border-top:1px solid var(--border);
 }
 
+/* TESTIMONIALS */
+
+.testimonials{
+    background:var(--cream);
+    padding-top:100px;
+    padding-bottom:100px;
+}
+
+.testimonial-rating{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+    margin:18px 0 14px;
+    flex-wrap:wrap;
+}
+
+.testimonial-rating .stars{
+    color:var(--gold);
+    font-size:24px;
+    letter-spacing:3px;
+}
+
+.rating-label{
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:.5px;
+    text-transform:uppercase;
+    color:var(--muted);
+}
+
+.testimonial-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:24px;
+    max-width:1100px;
+    margin:50px auto 0;
+}
+
+.testimonial-card{
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 20px 45px rgba(17,24,39,.12);
+    transition:.3s ease;
+}
+
+.testimonial-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 26px 55px rgba(17,24,39,.18);
+}
+
+.testimonial-card img{
+    width:100%;
+    aspect-ratio:3/4;
+    object-fit:cover;
+    display:block;
+}
+
 /* CTA */
 
 .cta{
@@ -1404,10 +1490,19 @@ footer{
         grid-template-columns:1fr 1fr;
     }
 
+    .testimonial-grid{
+        grid-template-columns:1fr;
+        gap:20px;
+    }
+
     .hero-nav{
         width:38px;
         height:38px;
         font-size:12px;
+    }
+
+    .virtual-tour-frame{
+        border-radius:16px;
     }
 
     .property-image{
@@ -1581,4 +1676,130 @@ body.modal-open{overflow:hidden;}
  .photo-modal-gallery{grid-template-columns:1fr;}
  .photo-modal-gallery img{height:320px;}
  .photo-modal-title{font-size:27px;}
+}
+
+/* BUSINESS CARD MODAL */
+.contact-card-trigger{cursor:pointer;}
+
+.card-modal{
+    position:fixed;
+    inset:0;
+    z-index:3200;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:24px;
+}
+.card-modal.is-open{
+    display:flex;
+}
+.card-modal-backdrop{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.82);
+    backdrop-filter:blur(7px);
+}
+.card-modal-dialog{
+    position:relative;
+    z-index:1;
+    width:min(520px,94vw);
+    max-height:92vh;
+    overflow:auto;
+    background:#fff;
+    border-radius:24px;
+    padding:32px;
+    text-align:center;
+    box-shadow:0 30px 90px rgba(0,0,0,.5);
+}
+.card-modal-title{
+    font-family:"Playfair Display",serif;
+    font-size:24px;
+    color:var(--dark);
+    margin-bottom:18px;
+}
+.card-modal-image{
+    width:100%;
+    border-radius:16px;
+    box-shadow:0 16px 40px rgba(17,24,39,.18);
+    margin-bottom:22px;
+}
+.card-modal-cta{
+    display:inline-block;
+    width:100%;
+    text-align:center;
+    border:0;
+    cursor:pointer;
+}
+.card-modal-close{
+    position:absolute;
+    top:12px;
+    right:16px;
+    width:40px;
+    height:40px;
+    border:0;
+    border-radius:50%;
+    background:var(--cream);
+    color:var(--dark);
+    font-size:26px;
+    line-height:1;
+    cursor:pointer;
+}
+.card-modal-close:hover{
+    background:var(--border);
+}
+
+/* GLOBAL IMAGE LIGHTBOX */
+.lightbox-clickable{
+    cursor:zoom-in;
+}
+.lightbox{
+    position:fixed;
+    inset:0;
+    z-index:3100;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:30px;
+}
+.lightbox.is-open{
+    display:flex;
+}
+.lightbox-backdrop{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.88);
+    backdrop-filter:blur(8px);
+}
+.lightbox img{
+    position:relative;
+    z-index:1;
+    max-width:92vw;
+    max-height:88vh;
+    border-radius:12px;
+    box-shadow:0 30px 90px rgba(0,0,0,.5);
+    object-fit:contain;
+}
+.lightbox-close{
+    position:absolute;
+    top:20px;
+    right:24px;
+    z-index:2;
+    width:44px;
+    height:44px;
+    border:0;
+    border-radius:50%;
+    background:rgba(255,255,255,.15);
+    color:#fff;
+    font-size:30px;
+    line-height:1;
+    cursor:pointer;
+}
+.lightbox-close:hover{
+    background:rgba(255,255,255,.28);
+}
+
+@media(max-width:650px){
+    .card-modal-dialog{
+        padding:24px;
+    }
 }
